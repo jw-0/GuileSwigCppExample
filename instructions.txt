@@ -1,0 +1,5 @@
+swig -c++ -guile example.i
+
+g++ -fPIC -I/usr/include/guile/3.0 -c example_wrap.cxx
+g++ -fPIC -c example.cpp
+g++ -shared example.o example_wrap.o -o libexample.so
